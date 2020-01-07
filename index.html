@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Index page</title>
+    <title>Vue.js Calculator</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,28 +11,28 @@
 </head>
 
 <body>
-    <div id="app">
-        <div class="wrap">
-            <div class="calc">
-                <input type="number" class="calc__output" v-model="output"></input>
-                <span class="calc__item calc__item_hightlighted" @click="addToExpression">/</span>
-                <span class="calc__item calc__item_hightlighted" @click="addToExpression">*</span>
-                <span class="calc__item calc__item_hightlighted" @click="addToExpression">-</span>
-                <span class="calc__item" @click="addToExpression">0</span>
-                <span class="calc__item" @click="addToExpression">1</span>
-                <span class="calc__item" @click="addToExpression">2</span>
-                <span class="calc__item" @click="addToExpression">3</span>
-                <span class="calc__item" @click="addToExpression">4</span>
-                <span class="calc__item" @click="addToExpression">5</span>
-                <span class="calc__item" @click="addToExpression">6</span>
-                <span class="calc__item" @click="addToExpression">7</span>
-                <span class="calc__item" @click="addToExpression">8</span>
-                <span class="calc__item" @click="addToExpression">9</span>
-                <span class="calc__item calc__item_clear" @click="clear">C</span>
-
-                <span class="calc__item calc__item_plus calc__item_hightlighted" @click="addToExpression">+</span>
-                <span class="calc__item calc__item_eq" @click="handleExpression">=</span>
-            </div>
+    <div class="wrap">
+        <div class="calc">
+            <input @keyup.enter="handleExpression" type="text" class="calc__output" v-model="output"></input>
+            <button class="calc__item calc__item_hightlighted" @click="addToExpression">/</button>
+            <button class="calc__item calc__item_hightlighted" @click="addToExpression">*</button>
+            <button class="calc__item calc__item_hightlighted" @click="addToExpression">-</button>
+            <button class="calc__item calc__item_hightlighted" @click="addToExpression">%</button>
+            <button class="calc__item" @click="addToExpression">0</button>
+            <button class="calc__item" @click="addToExpression">1</button>
+            <button class="calc__item" @click="addToExpression">2</button>
+            <button class="calc__item" @click="addToExpression">3</button>
+            <button class="calc__item" @click="addToExpression">4</button>
+            <button class="calc__item" @click="addToExpression">5</button>
+            <button class="calc__item" @click="addToExpression">6</button>
+            <button class="calc__item" @click="addToExpression">7</button>
+            <button class="calc__item" @click="addToExpression">8</button>
+            <button class="calc__item" @click="addToExpression">9</button>
+            <button class="calc__item" @click="addToExpression">.</button>
+            <button class="calc__item calc__item_clear" @click="clear">C</button>
+            <button class="calc__item calc__item_trim" @click="trim">Del</button>
+            <button class="calc__item calc__item_plus calc__item_hightlighted" @click="addToExpression">+</button>
+            <button class="calc__item calc__item_eq" @click="handleExpression">=</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
