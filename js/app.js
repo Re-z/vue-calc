@@ -1,11 +1,11 @@
 const v = new Vue({
 	el: '.wrap',
 	data: {
-		output: '0'
+		output: '0',
+		logs: []
 	},
 	methods: {
-		addToExpression(ev) {
-			const val = ev.target.innerHTML;
+		addToExpression(val) {
 			//запрещаем ставить первым символом некоторые операторы
 			if(this.output.length === 0 && (val === '%' || val === '*'|| val === '/')) {
 				return
@@ -19,7 +19,13 @@ const v = new Vue({
 		},
 		handleExpression() {
 			//eval - "выполняет" строку
-			this.output = eval(this.output)
+			const result = eval(this.output);
+			//чистим логи вычислений, чтобы не нагромождались
+			if(this.logs.length === 2) {
+				this.logs.splice(0,1)
+			}
+			this.logs.push(`${this.output}=${result}`);
+			this.output = result;
 		},
 		clear() {
 			this.output = '0'
