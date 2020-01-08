@@ -5,6 +5,3 @@
 - SASS + Css Grid
 - Vue.js
 - Gulp.js
-
-### ToDo:
-- Добавить лог

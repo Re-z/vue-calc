@@ -18,6 +18,7 @@
                 <label v-for="log in logs" :key="log">{{log}}</label>
                 <input @keyup.enter="handleExpression" type="text"  v-model="output"></input>
             </div>
+            
             <button 
                 class="calc__item calc__item_hightlighted" 
                 @click="addToExpression(operator)" 
